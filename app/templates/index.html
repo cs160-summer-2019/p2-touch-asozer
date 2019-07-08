@@ -85,6 +85,68 @@
 	</div>
 	<script>
 	  // your solution here
+    
+    
+    var rotating = document.getElementById('rotate-box');
+    var mc1 = new Hammer(rotating);
+    var r = new Hammer.Rotate();
+    mc1.add([r]);
+    mc1.on("rotate", function(ev) {
+      rotating.textContent = "rotating";
+    })
+
+    var pinching = document.getElementById('pinch-box');
+    var mc2 = new Hammer(pinching);
+    var p = new Hammer.Pinch();
+    mc2.add([p]);
+    mc2.on("pinch", function(ev) {
+      pinching.textContent = "pinching";
+    })
+    
+//     var myElement = new Hammer.Manager(document.getElementById('rotate-box'));
+    
+//     var mc = new Hammer.Manager(myElement);
+    
+//     var rotate = new Hammer.Rotate();
+//     var pinch = new Hammer.Pinch();
+    
+//     pinch.recognizeWith(rotate);
+
+//     mc.add([pinch, rotate]);
+
+
+//     mc.on("pinch rotate", function() {
+//         myElement.style.backgroundColor("white");
+//     });
+    
+    
+    var pressing = document.getElementById('press-box');
+    var mc3 = new Hammer(pressing);
+    mc3.on("press", function(ev) {
+      pressing.textContent = "pressing";
+    })
+    
+    
+    var panning = document.getElementById('pan-box');
+    var mc4 = new Hammer(panning);
+    mc4.on("pan", function(ev) {
+      panning.textContent = "panning";
+    })
+    
+    var tapping = document.getElementById('tap-box');
+    var mc5 = new Hammer(tapping);
+    mc5.on("tap", function(ev) {
+      tapping.textContent = "tapping";
+    })
+    
+
+    var swipping = document.getElementById('swipe-box');
+    var mc6 = new Hammer(swipping);
+    mc6.on("swipe", function(ev) {
+      swipping.textContent = "swipping";
+    })
+   
+    
   </script>
 </body>
 </html>
